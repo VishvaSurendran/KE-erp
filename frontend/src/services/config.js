@@ -1,6 +1,6 @@
 // ─── API Configuration & Constants ────────────────────────────────────────────
 
-export const API_BASE_URL = "http://localhost:3001";
+export const API_BASE_URL = "https://ke-erp-backend.onrender.com/";
 
 export const ENDPOINTS = {
   LEADS: "/leads",
