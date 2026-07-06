@@ -1,0 +1,305 @@
+/* Wrapper */
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  background: var(--surface);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  box-shadow: var(--shadow-card);
+  border: 1px solid var(--border);
+}
+
+/* ── Scroll container ── */
+.tableScroll {
+  overflow-x: auto;
+  width: 100%;
+}
+
+/* ── Table ── */
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.875rem;
+  min-width: 800px;
+}
+
+/* ── Head ── */
+.table thead {
+  background: var(--table-head-bg);
+  position: sticky;
+  top: 0;
+  z-index: 1;
+}
+
+.table thead th {
+  padding: 0.875rem 1rem;
+  text-align: left;
+  font-weight: 600;
+  font-size: 0.78rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  white-space: nowrap;
+  border-bottom: 2px solid var(--border);
+}
+
+.table thead th:last-child {
+  text-align: center;
+}
+
+/* ── Body ── */
+.table tbody tr {
+  border-bottom: 1px solid var(--border-subtle);
+  transition: background 0.15s ease;
+}
+
+.table tbody tr:last-child {
+  border-bottom: none;
+}
+
+.table tbody tr:hover {
+  background: var(--row-hover);
+}
+
+.table tbody td {
+  padding: 0.9rem 1rem;
+  color: var(--text-primary);
+  vertical-align: middle;
+}
+
+/* ── Lead Name ── */
+.leadName {
+  font-weight: 600;
+  color: var(--accent);
+}
+
+.leadEmail {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+}
+
+/* ── Status Badge ── */
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  padding: 0.3rem 0.75rem;
+  border-radius: 999px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  white-space: nowrap;
+}
+
+.badge::before {
+  content: "";
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: currentColor;
+  opacity: 0.7;
+}
+
+.badge_new {
+  background: #e0f2fe;
+  color: #0284c7;
+}
+
+.badge_contacted {
+  background: #fef3c7;
+  color: #b45309;
+}
+
+.badge_qualified {
+  background: #d1fae5;
+  color: #059669;
+}
+
+.badge_proposal {
+  background: #ede9fe;
+  color: #7c3aed;
+}
+
+.badge_negotiation {
+  background: #ffedd5;
+  color: #c2410c;
+}
+
+.badge_won {
+  background: #d1fae5;
+  color: #15803d;
+}
+
+.badge_lost {
+  background: #fee2e2;
+  color: #b91c1c;
+}
+
+.badge_default {
+  background: #f1f5f9;
+  color: #64748b;
+}
+
+/* ── Actions ── */
+.actions {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+}
+
+.btnView,
+.btnEdit {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  padding: 0.35rem 0.85rem;
+  border-radius: var(--radius-sm);
+  font-size: 0.78rem;
+  font-weight: 600;
+  cursor: pointer;
+  border: 1px solid transparent;
+  transition: all 0.18s ease;
+  white-space: nowrap;
+}
+
+.btnView {
+  background: var(--btn-view-bg);
+  color: var(--btn-view-color);
+  border-color: var(--btn-view-border);
+}
+
+.btnView:hover {
+  background: var(--btn-view-hover-bg);
+  transform: translateY(-1px);
+}
+
+.btnEdit {
+  background: var(--btn-edit-bg);
+  color: var(--btn-edit-color);
+  border-color: var(--btn-edit-border);
+}
+
+.btnEdit:hover {
+  background: var(--btn-edit-hover-bg);
+  transform: translateY(-1px);
+}
+
+/* ── Pagination ── */
+.pagination {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.85rem 1.25rem;
+  border-top: 1px solid var(--border);
+  background: var(--pagination-bg);
+  flex-wrap: wrap;
+  gap: 0.75rem;
+}
+
+.paginationInfo {
+  font-size: 0.825rem;
+  color: var(--text-muted);
+}
+
+.paginationInfo strong {
+  color: var(--text-primary);
+}
+
+.paginationControls {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.perPageLabel {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  white-space: nowrap;
+}
+
+.perPageSelect {
+  padding: 0.35rem 0.6rem;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  background: var(--surface);
+  color: var(--text-primary);
+  font-size: 0.8rem;
+  cursor: pointer;
+  transition: border-color 0.15s;
+}
+
+.perPageSelect:focus {
+  outline: none;
+  border-color: var(--accent);
+}
+
+.divider {
+  width: 1px;
+  height: 20px;
+  background: var(--border);
+  margin: 0 0.25rem;
+}
+
+.pageIndicator {
+  font-size: 0.825rem;
+  color: var(--text-muted);
+  white-space: nowrap;
+  min-width: 80px;
+  text-align: center;
+}
+
+.pageIndicator strong {
+  color: var(--text-primary);
+}
+
+.btnPage {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 34px;
+  height: 34px;
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--border);
+  background: var(--surface);
+  color: var(--text-primary);
+  font-size: 1rem;
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+
+.btnPage:hover:not(:disabled) {
+  background: var(--accent);
+  color: #fff;
+  border-color: var(--accent);
+}
+
+.btnPage:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+/* ── Responsive ── */
+@media (max-width: 768px) {
+  .pagination {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+  }
+  .paginationControls {
+    width: 100%;
+    justify-content: space-between;
+  }
+}
+
+@media (max-width: 480px) {
+  .actions {
+    flex-direction: column;
+  }
+  .btnView,
+  .btnEdit {
+    width: 100%;
+    justify-content: center;
+  }
+}

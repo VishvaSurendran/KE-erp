@@ -1,0 +1,544 @@
+/* ── Overlay ── */
+.overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.55);
+  backdrop-filter: blur(4px);
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+  animation: fadeIn 0.2s ease;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+/* ── Dialog ── */
+.dialog {
+  background: var(--surface);
+  border-radius: var(--radius-lg);
+  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.35);
+  width: 100%;
+  max-width: 680px;
+  max-height: 90vh;
+  display: flex;
+  flex-direction: column;
+  animation: slideUp 0.25s ease;
+  border: 1px solid var(--border);
+  overflow: hidden;
+}
+
+@keyframes slideUp {
+  from {
+    transform: translateY(24px);
+    opacity: 0;
+  }
+
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+/* ── Header ── */
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1.25rem 1.5rem;
+  border-bottom: 1px solid var(--border);
+  background: var(--modal-header-bg);
+  flex-shrink: 0;
+}
+
+.headerLeft {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.headerIcon {
+  width: 38px;
+  height: 38px;
+  border-radius: var(--radius-sm);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.1rem;
+  background: var(--accent-soft);
+  color: var(--accent);
+}
+
+.title {
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin: 0;
+}
+
+.subtitle {
+  font-size: 0.78rem;
+  color: var(--text-muted);
+  margin: 0;
+}
+
+.btnClose {
+  width: 34px;
+  height: 34px;
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--border);
+  background: transparent;
+  color: var(--text-muted);
+  font-size: 1.1rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.15s;
+}
+
+.btnClose:hover {
+  background: var(--danger-soft);
+  color: var(--danger);
+  border-color: var(--danger-soft);
+}
+
+/* ── Mode Tabs ── */
+.modeTabs {
+  display: flex;
+  gap: 0.25rem;
+  padding: 0.75rem 1.5rem 0;
+  border-bottom: 1px solid var(--border);
+  flex-shrink: 0;
+}
+
+.modeTab {
+  padding: 0.5rem 1.1rem;
+  border-radius: var(--radius-sm) var(--radius-sm) 0 0;
+  font-size: 0.82rem;
+  font-weight: 600;
+  border: none;
+  background: transparent;
+  color: var(--text-muted);
+  cursor: pointer;
+  transition: all 0.15s;
+  border-bottom: 2px solid transparent;
+  margin-bottom: -1px;
+}
+
+.modeTab:hover {
+  color: var(--accent);
+}
+
+.modeTabActive {
+  color: var(--accent);
+  border-bottom-color: var(--accent);
+  background: var(--accent-soft);
+}
+
+/* ── Body ── */
+.body {
+  flex: 1;
+  overflow-y: auto;
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+/* ── Section ── */
+.section {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.sectionTitle {
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--text-muted);
+  padding-bottom: 0.5rem;
+  border-bottom: 1px solid var(--border-subtle);
+}
+
+/* ── Detail Grid ── */
+.detailGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 1rem 1.5rem;
+}
+
+.detailItem {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+}
+
+.detailLabel {
+  font-size: 0.72rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--text-muted);
+}
+
+.detailValue {
+  font-size: 0.9rem;
+  color: var(--text-primary);
+  font-weight: 500;
+}
+
+/* ── Form Grid ── */
+.formGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+}
+
+.formGridFull {
+  grid-column: 1 / -1;
+}
+
+.formGroup {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.label {
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: var(--text-secondary);
+}
+
+.required {
+  color: var(--danger);
+  margin-left: 2px;
+}
+
+.input,
+.select {
+  padding: 0.6rem 0.85rem;
+  border: 1.5px solid var(--border);
+  border-radius: var(--radius-sm);
+  background: var(--input-bg);
+  color: var(--text-primary);
+  font-size: 0.88rem;
+  font-family: inherit;
+  transition: border-color 0.15s, box-shadow 0.15s;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.input:focus,
+.select:focus {
+  outline: none;
+  border-color: var(--accent);
+  box-shadow: 0 0 0 3px var(--accent-ring);
+}
+
+.inputError {
+  border-color: var(--danger) !important;
+  box-shadow: 0 0 0 3px var(--danger-ring) !important;
+}
+
+.errorMsg {
+  font-size: 0.75rem;
+  color: var(--danger);
+  margin-top: 0.1rem;
+}
+
+/* ── Notes ── */
+.notesArea {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.noteCompose {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.noteInput {
+  flex: 1;
+  padding: 0.6rem 0.85rem;
+  border: 1.5px solid var(--border);
+  border-radius: var(--radius-sm);
+  background: var(--input-bg);
+  color: var(--text-primary);
+  font-size: 0.88rem;
+  font-family: inherit;
+  transition: border-color 0.15s, box-shadow 0.15s;
+  resize: none;
+}
+
+.noteInput:focus {
+  outline: none;
+  border-color: var(--accent);
+  box-shadow: 0 0 0 3px var(--accent-ring);
+}
+
+.btnAddNote {
+  padding: 0.6rem 1.1rem;
+  background: var(--accent);
+  color: #fff;
+  border: none;
+  border-radius: var(--radius-sm);
+  font-size: 0.83rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.15s, transform 0.12s;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+.btnAddNote:hover:not(:disabled) {
+  background: var(--accent-dark);
+  transform: translateY(-1px);
+}
+
+.btnAddNote:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.noteList {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+  max-height: 220px;
+  overflow-y: auto;
+  padding-right: 0.25rem;
+}
+
+.noteItem {
+  display: flex;
+  gap: 0.75rem;
+  background: var(--note-bg);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-sm);
+  padding: 0.75rem 1rem;
+  transition: border-color 0.15s;
+}
+
+.noteItem:hover {
+  border-color: var(--border);
+}
+
+.noteAvatar {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background: var(--accent);
+  color: #fff;
+  font-size: 0.8rem;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.noteContent {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+  min-width: 0;
+}
+
+.noteMeta {
+  font-size: 0.72rem;
+  color: var(--text-muted);
+}
+
+.noteText {
+  font-size: 0.875rem;
+  color: var(--text-primary);
+  word-break: break-word;
+}
+
+.noteEditInput {
+  width: 100%;
+  padding: 0.4rem 0.6rem;
+  border: 1.5px solid var(--accent);
+  border-radius: var(--radius-sm);
+  background: var(--input-bg);
+  color: var(--text-primary);
+  font-size: 0.875rem;
+  font-family: inherit;
+  box-sizing: border-box;
+}
+
+.noteEditInput:focus {
+  outline: none;
+}
+
+.noteActions {
+  display: flex;
+  gap: 0.35rem;
+  flex-shrink: 0;
+  align-items: flex-start;
+  margin-top: 0.1rem;
+}
+
+.btnNoteAction {
+  width: 26px;
+  height: 26px;
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--border);
+  background: transparent;
+  cursor: pointer;
+  font-size: 0.8rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.15s;
+}
+
+.btnNoteEdit:hover {
+  background: var(--accent-soft);
+  border-color: var(--accent);
+  color: var(--accent);
+}
+
+.btnNoteDelete:hover {
+  background: var(--danger-soft);
+  border-color: var(--danger);
+  color: var(--danger);
+}
+
+.btnNoteSave:hover {
+  background: #d1fae5;
+  border-color: #059669;
+  color: #059669;
+}
+
+.emptyNotes {
+  text-align: center;
+  color: var(--text-muted);
+  font-size: 0.82rem;
+  padding: 1rem;
+  background: var(--note-bg);
+  border-radius: var(--radius-sm);
+  border: 1px dashed var(--border);
+}
+
+/* ── Footer ── */
+.footer {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 0.75rem;
+  padding: 1rem 1.5rem;
+  border-top: 1px solid var(--border);
+  background: var(--modal-footer-bg);
+  flex-shrink: 0;
+}
+
+.btnSecondary {
+  padding: 0.55rem 1.25rem;
+  border-radius: var(--radius-sm);
+  border: 1.5px solid var(--border);
+  background: transparent;
+  color: var(--text-secondary);
+  font-size: 0.875rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.15s;
+}
+
+.btnSecondary:hover {
+  background: var(--surface-hover);
+  border-color: var(--text-muted);
+}
+
+.btnPrimary {
+  padding: 0.55rem 1.5rem;
+  border-radius: var(--radius-sm);
+  border: none;
+  background: var(--accent);
+  color: #fff;
+  font-size: 0.875rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.18s;
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+.btnPrimary:hover:not(:disabled) {
+  background: var(--accent-dark);
+  transform: translateY(-1px);
+}
+
+.btnPrimary:disabled {
+  opacity: 0.55;
+  cursor: not-allowed;
+  transform: none;
+}
+
+.spinner {
+  width: 14px;
+  height: 14px;
+  border: 2px solid rgba(255, 255, 255, 0.4);
+  border-top-color: #fff;
+  border-radius: 50%;
+  animation: spin 0.7s linear infinite;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* ── Responsive ── */
+@media (max-width: 768px) {
+  .dialog {
+    width: 95vw;
+    max-height: 95vh;
+  }
+  .detailGrid,
+  .formGrid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 480px) {
+  .dialog {
+    width: 100vw;
+    height: 100vh;
+    max-height: 100vh;
+    border-radius: 0;
+  }
+  .header,
+  .body,
+  .footer {
+    padding: 1rem;
+  }
+  .btnSecondary,
+  .btnPrimary {
+    flex: 1;
+    justify-content: center;
+  }
+  .footer {
+    flex-direction: column-reverse;
+  }
+  .footer button {
+    width: 100%;
+  }
+}

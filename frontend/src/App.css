@@ -1,0 +1,74 @@
+/* App.css – minimal shell styles */
+#root {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.app-nav {
+  height: 56px;
+  background: var(--surface);
+  border-bottom: 1px solid var(--border);
+  display: flex;
+  align-items: center;
+  padding: 0 2rem;
+  gap: 1rem;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+}
+
+.app-nav .brand {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-weight: 800;
+  font-size: 1.05rem;
+  color: var(--accent);
+  text-decoration: none;
+  letter-spacing: -0.02em;
+}
+
+.app-nav .brand span {
+  color: var(--text-primary);
+}
+
+.app-nav .nav-links {
+  display: flex;
+  gap: 0.25rem;
+  margin-left: auto;
+}
+
+.app-nav .nav-link {
+  padding: 0.4rem 0.85rem;
+  border-radius: var(--radius-sm);
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: var(--text-secondary);
+  text-decoration: none;
+  transition: background 0.15s, color 0.15s;
+}
+
+.app-nav .nav-link:hover,
+.app-nav .nav-link.active {
+  background: var(--accent-soft);
+  color: var(--accent);
+  text-decoration: none;
+}
+
+.app-main {
+  flex: 1;
+}
+
+/* ── Responsive ── */
+@media (max-width: 480px) {
+  .app-nav {
+    padding: 0 1rem;
+    gap: 0.5rem;
+  }
+  .app-nav .brand {
+    font-size: 0.95rem;
+  }
+  .app-nav .nav-link {
+    font-size: 0.8rem;
+    padding: 0.35rem 0.65rem;
+  }
+}
